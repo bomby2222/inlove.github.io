@@ -1,0 +1,161 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f0f2f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px 20px; /* ปรับ padding ให้น้อยลงด้านบนและล่าง */
+}
+
+/* ลบ CSS ของ header-section ออกไปเลย */
+
+.profiles-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around; /* เปลี่ยนเป็น space-around หรือ space-between */
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    width: 100%; /* ขยายเต็มพื้นที่ */
+    max-width: 1200px; /* จำกัดความกว้างสูงสุด */
+}
+
+.profile-card {
+    width: 48%;
+    min-width: 300px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    border: 1px solid #ddd;
+    flex-grow: 1; /* ขยายเต็มพื้นที่ที่เหลือ */
+}
+
+/* ----- ส่วนหัวของการ์ดโปรไฟล์ (เหมือนเดิม) ----- */
+.profile-header {
+    background-color: #3498db;
+    color: #fff;
+    padding: 18px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.admin-info {
+    display: flex;
+    align-items: center;
+}
+
+.admin-text {
+    font-weight: bold;
+    margin-right: 15px;
+    font-size: 1.1em;
+}
+
+.data-info {
+    display: flex;
+    font-size: 0.9em;
+    color: #ecf0f1;
+}
+
+.data-item {
+    margin-right: 15px;
+}
+
+.hit-icon {
+    margin-right: 3px;
+}
+
+.settings-icon {
+    width: 22px;
+    height: 22px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+/* ----- เนื้อหาของการ์ดโปรไฟล์ (เหมือนเดิม) ----- */
+.profile-content {
+    padding: 25px 20px;
+    display: flex;
+    border-top: 1px solid #eee;
+}
+
+.profile-text-section {
+    flex: 2;
+    padding-right: 30px;
+}
+
+.profile-image-section {
+    flex: 1;
+    text-align: center;
+}
+
+.profile-image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.profile-name {
+    font-size: 1.6em;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.profile-position {
+    color: #777;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.education-section,
+.rank-section,
+.position-detail-section,
+.phone-section {
+    margin-bottom: 20px;
+}
+
+.education-section h3,
+.rank-section h3,
+.position-detail-section h3,
+.phone-section h3 {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.education-section p,
+.rank-section p,
+.position-detail-section p,
+.phone-section p {
+    color: #666;
+}
+
+
+/* ----- ไอคอนปักหมุด (เหมือนเดิม) ----- */
+.pin-icon {
+    width: 24px;
+    height: 24px;
+    background-color: #f39c12;
+    border-radius: 50%;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    border: 2px solid #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.profile-card {
+    position: relative;
+}
+
+/* ----- ปรับแต่งอื่นๆ (เพิ่มเติม) ----- */
+/* ... Media Queries สำหรับ Responsive Design ... */
