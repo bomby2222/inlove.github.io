@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>โพสต์สไตล์เดซี่</title>
+</head>
+<style>/* ตั้งค่าพื้นหลังสีชมพู */
+    /* ตั้งค่าพื้นหลังสีชมพู */
+body {
+    background-color: #ffe6f2;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* กล่องโพสต์ทั้งหมด */
+.container {
+    width: 400px;
+}
+
+/* สไตล์ของแต่ละโพสต์ */
+.post {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* ส่วนโปรไฟล์ */
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.username {
+    font-weight: bold;
+}
+
+.time {
+    color: gray;
+    font-size: 14px;
+    margin-left: auto;
+}
+
+/* ภาพในโพสต์ */
+.image-container img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+/* คำอธิบายโพสต์ */
+.caption {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #555;
+}
+
+/* ส่วนแสดงการกดถูกใจ */
+.actions {
+    margin-top: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+/* ปุ่มหัวใจ */
+.heart-btn {
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    margin-right: 10px;
+}
+
+.heart-btn:active {
+    transform: scale(1.3);
+}
+
+/* ส่วนหัวใจลอย */
+.heart-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+}
+
+.floating-heart {
+    position: absolute;
+    font-size: 24px;
+    opacity: 1;
+    animation: floatUp 2s ease-in-out forwards;
+}
+
+/* เอฟเฟกต์หัวใจลอยขึ้น */
+@keyframes floatUp {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+/* ปุ่มย้อนกลับแบบลอย วงกลม สีชมพู */
+.floating-back-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #ff99cc;
+    color: white;
+    border: none;
+    border-radius: 50%; /* ทำให้เป็นวงกลม */
+    font-size: 24px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+    z-index: 999;
+}
+
+/* เอฟเฟกต์เวลา hover */
+.floating-back-btn:hover {
+    background-color: #ff66b2;
+    transform: scale(1.1); /* ขยายเล็กน้อย */
+}
+
+/* เอฟเฟกต์เวลากด */
+.floating-back-btn:active {
+    background-color: #ff3385;
+    transform: scale(0.9);
+}
+
+    </style>
+<body>
+    <div class="container">
+        <!-- โพสต์ที่ 1 -->
+        <div class="post">
+            <div class="profile">
+                <img src="12.jpg" alt="Profile" class="profile-pic">
+                <span class="username">bomby_ii</span>
+                <span class="time">15/3/2568</span>
+            </div>
+            <div class="image-container">
+                <img src="001.png" alt="โพสต์">
+            </div>
+            <p class="caption">☀️คำพูดที่น่ารักที่สุดของเทอ🌸</p>
+            <div class="actions">
+                <button class="heart-btn" onclick="showHeart(this)">❤️</button>
+                <span>ถูกใจโดย <b>_bomby_</b> 💘</span>
+            </div>
+            <div class="heart-container"></div>
+        </div>
+        <div class="post">
+            <div class="profile">
+                <img src="12.jpg" alt="Profile" class="profile-pic">
+                <span class="username">bomby_ii</span>
+                <span class="time">15/3/2568</span>
+            </div>
+            <div class="image-container">
+                <img src="002.jpg" alt="โพสต์">
+            </div>
+            <p class="caption">เทอโทรมาดีใจสุดๆ💘😊📲</p>
+            <div class="actions">
+                <button class="heart-btn" onclick="showHeart(this)">❤️</button>
+                <span>ถูกใจโดย <b>_bomby_</b> 💘</span>
+            </div>
+            <div class="heart-container"></div>
+        </div>
+        <div class="post">
+            <div class="profile">
+                <img src="12.jpg" alt="Profile" class="profile-pic">
+                <span class="username">bomby_ii</span>
+                <span class="time">15/3/2568</span>
+            </div>
+            <div class="image-container">
+                <img src="003.png" alt="โพสต์">
+            </div>
+            <p class="caption">อันนั้น่ารักจริง 🫶📸 #วันดีๆ</p>
+            <div class="actions">
+                <button class="heart-btn" onclick="showHeart(this)">❤️</button>
+                <span>ถูกใจโดย <b>_bomby_</b> 💘</span>
+            </div>
+            <div class="heart-container"></div>
+        </div>
+        <div class="post">
+            <div class="profile">
+                <img src="12.jpg" alt="Profile" class="profile-pic">
+                <span class="username">bomby_ii</span>
+                <span class="time">15/3/2568</span>
+            </div>
+            <div class="image-container">
+                <img src="004.jpg" alt="โพสต์">
+            </div>
+            <p class="caption">อยากรู้สิ่งที่เทอชอบให้มากกว่านี้ 📽🎞📸</p>
+            <div class="actions">
+                <button class="heart-btn" onclick="showHeart(this)">❤️</button>
+                <span>ถูกใจโดย <b>_bomby_</b> 💘</span>
+            </div>
+            <div class="heart-container"></div>
+        </div>
+        <div class="post">
+            <div class="profile">
+                <img src="12.jpg" alt="Profile" class="profile-pic">
+                <span class="username">bomby_ii</span>
+                <span class="time">15/3/2568</span>
+            </div>
+            <div class="image-container">
+                <img src="005.jpg" alt="โพสต์">
+            </div>
+            <p class="caption"> เทอชอบของอะไรเเบบนี้ 🫰🏞 #น่ารักเกินไปละ</p>
+            <div class="actions">
+                <button class="heart-btn" onclick="showHeart(this)">❤️</button>
+                <span>ถูกใจโดย <b>_bomby_</b> 💘</span>
+            </div>
+            <div class="heart-container"></div>
+        </div>
+        <div class="post">
+            <div class="profile">
+                <img src="12.jpg" alt="Profile" class="profile-pic">
+                <span class="username">bomby_ii</span>
+                <span class="time">15/3/2568</span>
+            </div>
+            <div class="image-container">
+                <img src="006.jpg" alt="โพสต์">
+            </div>
+            <p class="caption">ฉันกำลังจะบ้า92374ddsv742#(@#&) #วันดีๆ</p>
+            <div class="actions">
+                <button class="heart-btn" onclick="showHeart(this)">❤️</button>
+                <span>ถูกใจโดย <b>_bomby_</b> 💘</span>
+            </div>
+            <div class="heart-container"></div>
+        </div>
+        <!-- โพสต์ที่ 2 -->
+        <div class="post">
+            <div class="profile">
+                <img src="12.jpg" alt="Profile" class="profile-pic">
+                <span class="username">bomby_ii</span>
+                <span class="time">15/3/2568</span>
+            </div>
+            <div class="image-container">
+                <img src="007.png" alt="โพสต์">
+            </div>
+            <p class="caption">ตอนได้ยินเสียงครั้งเเรก เสียงเทอน่ารักสุดไปเลย 🫶🤧😘😘😚 #สบายใจ</p>
+            <div class="actions">
+                <button class="heart-btn" onclick="showHeart(this)">❤️</button>
+                <span>ถูกใจโดย <b>_bomby_</b> 💘</span>
+            </div>
+            <div class="heart-container"></div>
+        </div>
+    </div>
+    
+
+    <script>
+        function showHeart(button) {
+            const post = button.closest('.post'); 
+            const heartContainer = post.querySelector('.heart-container'); 
+            const heart = document.createElement('div');
+            heart.classList.add('floating-heart');
+            heart.textContent = '❤️';
+
+            // ตั้งค่าตำแหน่งแบบสุ่ม
+            heart.style.left = `${Math.random() * 80 + 10}%`;
+            heartContainer.appendChild(heart);
+
+            // ให้หัวใจลอยขึ้น
+            setTimeout(() => {
+                heart.style.opacity = '0';
+                heart.style.transform = 'translateY(-100px)';
+            }, 100);
+
+            // ลบหัวใจเมื่อถึงจุดสูงสุด
+            setTimeout(() => {
+                heart.remove();
+            }, 2000);
+        }
+    </script>
+    <script>
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+    </script>
+    <button class="floating-back-btn" onclick="goBack()">←</button>
+
+</body>
+</html>
