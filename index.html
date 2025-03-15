@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>แบบทดสอบสุดน่ารัก</title>
-  <link rel="icon" type="png" href="111.png">
     <style>
         body {
             font-family: 'Comic Sans MS', cursive, sans-serif;
@@ -166,11 +165,21 @@
                 resultElement.textContent = 'ผิด!';
                 resultElement.className = 'incorrect';
             }
-            answerElement.textContent = `นี่คือคำตอบในใจบอม: ${correctAnswers[questionNumber]}`;
+            answerElement.textContent = `คำตอบที่ถูกต้อง: ${correctAnswers[questionNumber]}`;
             if (questionNumber === 10) {
                 document.getElementById('score').textContent = `บอมให้คะเเนนเอิน ${score} จาก 10 คะแนน`;
             }
         }
     </script>
+     <audio autoplay loop>
+        <source src="music.mp3" type="audio/mp3">
+    </audio>
+    <script>
+        function goBack() {
+            window.location.href = 'pots.html';
+        }
+    </script>
+    <button class="floating-back-btn" onclick="goBack()">cute moment</button>
+
 </body>
 </html>
